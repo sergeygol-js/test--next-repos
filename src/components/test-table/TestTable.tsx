@@ -312,6 +312,10 @@ function App() {
         <button className={styles.button} onClick={() => rerender()}>Force Rerender</button>
       </div>
       <pre>{JSON.stringify(pagination, null, 2)}</pre>
+      <label>Row Selection Obj:</label>
+      <pre>{JSON.stringify(table.getSelectedRowModel().flatRows, null, 2)}</pre>
+      <label>Row Selection State:</label>
+      <pre>{JSON.stringify(table.getState().rowSelection, null, 2)}</pre>
     </div>
   )
 }
