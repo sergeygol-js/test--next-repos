@@ -145,7 +145,7 @@ function App() {
       right: isPinned === 'right' ? `${column.getAfter('right')}px` : undefined,
       paddingLeft: isPinned === 'right' ? '4px' : 'initial',
       paddingRight: isPinned === 'left' ? '4px' : 'initial',
-      background: 'white',
+      background: isPinned ? 'white' : 'initial',
       opacity: isPinned ? 0.95 : 1,
       position: isPinned ? 'sticky' : 'relative',
       width: column.getSize(),
@@ -192,6 +192,7 @@ function App() {
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map(header => {
                   const { column } = header
+                  console.log('column: ', column)
                   return (
                     <th key={header.id} colSpan={header.colSpan} style={{ ...getCommonPinningStyles(column) }}>
                       {header.isPlaceholder ? null : (
