@@ -66,7 +66,7 @@ export function AddressBar() {
               .slice(1)
               .map((segment) => {
                 return (
-                  <React.Fragment key={segment}>
+                  segment && <React.Fragment key={segment}>
                     <span>
                       <span
                         key={segment}
